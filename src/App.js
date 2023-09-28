@@ -26,7 +26,9 @@ function App() {
             </Route>
           </Switch>
         </div>
-        <Footer />
+        <Route>
+        <Footer path='/about'/>
+        </Route>
       </div>
     </Router>
   );

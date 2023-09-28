@@ -11,13 +11,16 @@
 
 body {
   background: #fff;
+  color: #fff;
 }
 
 :root {
-  --primaryColor: rgb(0, 0, 0);
-  --secondaryColor: rgb(174, 0, 255);
+  --primaryColor: #14BDEB;
 }
 
+a {
+  color: var(--primaryColor);
+}
 .navBar {
   margin: auto;
   padding: 0.7rem 5rem;
@@ -25,6 +28,8 @@ body {
   align-items: center;
   justify-content: space-between;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 80%);
+  background: var(--primaryColor);
+  color: #fff;
 }
 
 .navBar .logo {
@@ -33,9 +38,37 @@ body {
 }
 
 .navBar a {
+  position: relative;
   text-decoration: none;
-  padding: 0rem 1rem;
+  margin: 0 0.5rem 0 0.5rem;
+  padding: 0rem 0.7rem;
   font-weight: 600;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.navBar a:hover{
+  opacity: 1;
+}
+
+.active-link:active::before,
+.active-link:focus::before,
+.active-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: bottom center;
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1);
+}
+
+.active-link{
+  opacity: 1;
 }
 
 /* homeStyle */
@@ -66,15 +99,56 @@ body {
 
 .carouCap {
   position: absolute;
-  top: 30%;
+  top: 10%;
+}
+
+.carouCap p:first-child{
+  color: #fff;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  font-weight: 400;
+  border-radius: 15px;
+}
+
+.carouCap h3{
+  padding-top: 5rem;
+}
+
+body button {
+  padding: 0.6em 1.6em;
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out; 
+}
+
+.carouCap button{
+  margin-top: 1em;
+}
+
+.carouCap button:hover{
+  background: transparent;
+  border: 2px solid var(--primaryColor);
+}
+
+.carouCap a{
+  text-decoration: none;
+}
+.carouCap button:hover a{
+  /* scale: 1.4; */
+  color: #fff;
 }
 
 
 /* formStlye */
 .formContainer {
-  background: rgba(0, 0, 0, 80%);
+  background: #000;
   padding: 0 13rem;
-  margin: auto;
+  margin: 2rem auto;
 }
 
 form {
@@ -148,5 +222,6 @@ form button {
 /* footerStlye */
 .footer {
   height: 20vh;
+  color: #fff;
   background: #000;
 }
