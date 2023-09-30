@@ -10,13 +10,13 @@ const Navbar = () => {
             <div className="nav-links">
                 <NavLink exact
                     to="/"
-                    activeClassName={location.pathname === '/' ? 'active-link' : ''} className='navLink'>
+                    activeClassName={location.pathname === '/' ? 'active-link' : ''}>
                     Home
                 </NavLink>
-                <NavLink to="/about" className='navLink' activeClassName="active-link">
+                <NavLink to="/about" activeClassName="active-link">
                     About
                 </NavLink>
-                <NavLink to="/contact" className='navLink' activeClassName="active-link">
+                <NavLink to="/contact" activeClassName="active-link">
                     Contact
                 </NavLink>
             </div >

@@ -51,9 +51,7 @@ a {
   opacity: 1;
 }
 
-.active-link:active::before,
-.active-link:focus::before,
-.active-link::before {
+.active-link::before{
   content: "";
   position: absolute;
   bottom: 0;
@@ -63,7 +61,12 @@ a {
   background-color: #fff;
   transform: scaleX(0);
   transform-origin: bottom center;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  /* transform: scale(1); */
+}
+
+.active-link:active::before,
+.active-link:focus::before{
   transform: scale(1);
 }
 
