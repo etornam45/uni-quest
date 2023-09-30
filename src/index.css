@@ -148,7 +148,8 @@ body button {
 
 
 /* formStlye */
-.formContainer {
+.formContainer,
+.review {
   background: #000;
   padding: 0 13rem;
   margin: 2rem auto;
@@ -220,6 +221,11 @@ select.uniChoice {
 
 form button {
   margin: auto;
+}
+
+/* reviewForm */
+.reviewContainer{
+  background: #fff;
 }
 
 /* footerStlye */
