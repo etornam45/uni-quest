@@ -21,6 +21,7 @@ body {
 a {
   color: var(--primaryColor);
 }
+
 .navBar {
   margin: auto;
   padding: 0.7rem 5rem;
@@ -44,14 +45,16 @@ a {
   padding: 0rem 0.7rem;
   font-weight: 600;
   color: #fff;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
-.navBar a:hover{
+.navBar a:hover,
+.navBar a:active,
+.navBar a:focus{
   opacity: 1;
 }
 
-.active-link::before{
+.navBar a::before{
   content: "";
   position: absolute;
   bottom: 0;
@@ -62,17 +65,25 @@ a {
   transform: scaleX(0);
   transform-origin: bottom center;
   transition: transform 0.4s ease-in-out;
-  /* transform: scale(1); */
 }
 
-.active-link:active::before,
-.active-link:focus::before{
+.navBar a:hover::before{
+transform: scale(1);
+}
+
+.active-link::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transform-origin: bottom center;
+  transition: transform 0.4s ease-in-out;
   transform: scale(1);
 }
 
-.active-link{
-  opacity: 1;
-}
 
 /* homeStyle */
 .home {
