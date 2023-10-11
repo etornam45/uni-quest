@@ -46,9 +46,7 @@ const Home = () => {
 
 
                 </Carousel>
-                {/* <button>
-                    <Link to="/data-form">start</Link>
-                </button> */}
+
             </div>
         </>
     );

@@ -7,11 +7,11 @@ const DataForm = () => {
         university: "",
         subjects: [
             { subject: "", grade: "" },
-            { subject: "", grade: "" },
-            { subject: "", grade: "" },
-            { subject: "", grade: "" },
-            { subject: "", grade: "" },
-            { subject: "", grade: "" },
+            // { subject: "", grade: "" },
+            // { subject: "", grade: "" },
+            // { subject: "", grade: "" },
+            // { subject: "", grade: "" },
+            // { subject: "", grade: "" },
         ],
     });
 
@@ -114,16 +114,16 @@ const DataForm = () => {
                             <option value="" disabled>
                                 eg. select university
                             </option>
-                            <option value="knust">
+                            <option value="KNUST">
                                 Kwame Nkrumah University of Science and Technology (KNUST)
                             </option>
-                            <option value="legon">University of Ghana (LEGON)</option>
+                            <option value="LEGON">University of Ghana (LEGON)</option>
                             <option value="ucc">University of Cape Coast (UCC)</option>
-                            <option value="sdd-ubids">
+                            <option value="SDD-UBIDS">
                                 Simon Diedong Dombo University of Business and Integrated
                                 Development Studies (SDD-UBIDS)
                             </option>
-                            <option value="upsa">
+                            <option value="UPSA">
                                 University of Professional Studies, Accra (UPSA)
                             </option>
                         </select>

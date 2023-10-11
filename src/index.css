@@ -10,7 +10,7 @@
 }
 
 body {
-  background: #fff;
+  background: #353535;
   color: #fff;
 }
 
@@ -18,17 +18,20 @@ body {
   --primaryColor: #14BDEB;
 }
 
-a {
-  color: var(--primaryColor);
+body a {
+  text-decoration: none;
 }
 
 .navBar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   margin: auto;
   padding: 0.7rem 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 80%);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 60%);
   background: var(--primaryColor);
   color: #fff;
 }
@@ -45,16 +48,17 @@ a {
   padding: 0rem 0.7rem;
   font-weight: 600;
   color: #fff;
+}
+
+.navBar a:not(.active) {
   opacity: 0.8;
 }
 
-.navBar a:hover,
-.navBar a:active,
-.navBar a:focus{
+.navBar a:not(.active):hover {
   opacity: 1;
 }
 
-.navBar a::before{
+.navBar a:not(.active):before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -67,11 +71,11 @@ a {
   transition: transform 0.4s ease-in-out;
 }
 
-.navBar a:hover::before{
-transform: scale(1);
+.navBar a:not(.active):hover::before {
+  transform: scale(1);
 }
 
-.active-link::before{
+.navBar .active::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -81,7 +85,7 @@ transform: scale(1);
   background-color: #fff;
   transform-origin: bottom center;
   transition: transform 0.4s ease-in-out;
-  transform: scale(1);
+  /* transform: scale(1); */
 }
 
 
@@ -116,9 +120,9 @@ transform: scale(1);
   top: 10%;
 }
 
-.carouCap p:first-child{
+.carouCap p:first-child {
   color: #fff;
-  width: 60%;
+  /* width: 50%; */
   margin: auto;
   text-align: center;
   background: rgba(255, 255, 255, 0.2);
@@ -126,49 +130,52 @@ transform: scale(1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 3rem;
   font-weight: 400;
-  border-radius: 15px;
+  border-radius: 2rem;
 }
 
-.carouCap h3{
+.carouCap h3 {
   padding-top: 5rem;
 }
 
-body button {
-  padding: 0.6em 1.6em;
-  border: none;
-  border-radius: 10px;
-  transition: transform 0.2s ease-in-out; 
-}
-
-.carouCap button{
+.carouCap button {
   margin-top: 1em;
 }
 
-.carouCap button:hover{
-  background: transparent;
-  border: 2px solid var(--primaryColor);
+.carouCap button a {
+  color: #fff;
 }
 
-.carouCap a{
-  text-decoration: none;
+button {
+  padding: 0.6em 1.6em;
+  border: 2px solid var(--primaryColor);
+  background: var(--primaryColor);
+  transition: transform 0.2s ease-in-out;
 }
-.carouCap button:hover a{
-  /* scale: 1.4; */
-  color: #fff;
+
+button:hover {
+  background: transparent;
 }
 
 
 /* formStlye */
-.formContainer,
-.review {
-  background: #000;
-  padding: 0 13rem;
-  margin: 2rem auto;
+.formContainer {
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.9)), url(/public/imgs/ktech.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 2rem 0 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 form {
+  z-index: 9;
+  width: 65%;
   background: #fff;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 form h2 {
@@ -182,7 +189,7 @@ form h2 {
 form label {
   display: block;
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 600;
   padding-bottom: 0.4rem;
 }
 
@@ -200,15 +207,16 @@ form label {
 
 .subject {
   display: flex;
-  gap: 1rem;
+  gap: 5rem;
+  margin-bottom: 1rem;
 }
 
 .subInput {
-  width: 40%;
+  width: 50%;
 }
 
 select.grade {
-  width: 10%;
+  width: 15%;
   background: transparent;
   border: none;
   border-bottom: 2px solid rgba(0, 0, 0, 40%);
@@ -230,18 +238,109 @@ select.uniChoice {
   outline: none;
 }
 
-form button {
-  margin: auto;
+.proceed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.proceed button,
+.revBtns button {
+  color: #fff;
+}
+
+.proceed button:hover,
+.revBtns button:hover {
+  color: var(--primaryColor);
+}
+
+
 /* reviewForm */
-.reviewContainer{
+.reviewContainer {
+  width: 100%;
+  position: relative;
+  padding: 2rem 0 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: #fff; */
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.9)), url(/public/imgs/ktech.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.review {
+  width: 65%;
   background: #fff;
+  padding: 5rem;
+}
+
+.review h2 {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.userInput{
+  padding: 0 0 1.7rem 1.7rem;
+}
+
+.review ul {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.revBtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.toPrograms a {
+  color: #fff;
+}
+
+.toPrograms:hover a {
+  color: var(--primaryColor);
 }
 
 /* footerStlye */
 .footer {
-  height: 20vh;
-  color: #fff;
-  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  font-size: 0.9rem;
+  color: #000;
+  background: #fff;
+  padding: 2rem;
 }
+
+.footer h5 {
+  color: var(--primaryColor);
+}
+
+/* programs */
+.program{
+  padding-top: 3rem;
+}
+
+.programsContainer{
+  width: 100%;
+  /* background: #000; */
+}
+
+.prog{
+  width: 40%;
+  font-size: 0.9rem;
+  padding: 1rem;
+  
+}
+
+
+/* .prog p{
+
+} */

@@ -1,22 +1,20 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
-    const location = useLocation();
 
     return (
         <nav className="navBar">
             <span className="logo">UniQuest</span>
+
             <div className="nav-links">
                 <NavLink exact
-                    to="/"
-                    activeClassName={location.pathname === '/' ? 'active-link' : ''}>
+                    to="/">
                     Home
                 </NavLink>
-                <NavLink to="/about" activeClassName="active-link">
+                <NavLink to="/about" >
                     About
                 </NavLink>
-                <NavLink to="/contact" activeClassName="active-link">
+                <NavLink to="/contact" >
                     Contact
                 </NavLink>
             </div >
