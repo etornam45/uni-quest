@@ -5,8 +5,10 @@ import Navbar from './components/navbar';
 import Home from './components/home';
 import DataForm from './components/dataForm';
 import Programs from './components/programs';
+import Program from './components/program';
 import Footer from './components/footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
@@ -21,14 +23,15 @@ function App() {
             <Route path="/data-form">
               <DataForm />
             </Route>
-            <Route path='/program'>
+            <Route path='/programs'>
               <Programs />
+            </Route>
+            <Route path='/program'>
+              <Program />
             </Route>
           </Switch>
         </div>
-        <Route>
         <Footer path='/about'/>
-        </Route>
       </div>
     </Router>
   );

@@ -12,14 +12,11 @@
 body {
   background: #353535;
   color: #fff;
+  font-size: 0.9rem;
 }
 
 :root {
   --primaryColor: #14BDEB;
-}
-
-body a {
-  text-decoration: none;
 }
 
 .navBar {
@@ -51,7 +48,7 @@ body a {
 }
 
 .navBar a:not(.active) {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .navBar a:not(.active):hover {
@@ -125,37 +122,46 @@ body a {
   /* width: 50%; */
   margin: auto;
   text-align: center;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 3rem;
+  padding: 2.7rem;
   font-weight: 400;
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 
 .carouCap h3 {
   padding-top: 5rem;
 }
 
-.carouCap button {
-  margin-top: 1em;
+/* .carouCap {
+ margin-top: 3rem;
+} */
+
+.carouCap a,
+.revBtns a,
+.prog a {
+  text-decoration: none;
 }
 
-.carouCap button a {
+.carouCap a,
+.revBtns a,
+.prog a {
   color: #fff;
-}
-
-button {
+  background: var(--primaryColor);
   padding: 0.6em 1.6em;
   border: 2px solid var(--primaryColor);
-  background: var(--primaryColor);
-  transition: transform 0.2s ease-in-out;
 }
 
-button:hover {
+.carouCap a:hover {
   background: transparent;
 }
 
+.revBtns a:hover,
+.prog a:hover {
+  background: transparent;
+  color: var(--primaryColor);
+}
 
 /* formStlye */
 .formContainer {
@@ -189,7 +195,7 @@ form h2 {
 form label {
   display: block;
   font-size: 1.2rem;
-  font-weight: 600;
+  /* font-weight: ; */
   padding-bottom: 0.4rem;
 }
 
@@ -238,19 +244,22 @@ select.uniChoice {
   outline: none;
 }
 
-.proceed {
+.toRev {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.proceed button,
-.revBtns button {
+button {
+  padding: 0.6em 1.6em;
+  border: 2px solid var(--primaryColor);
+  background: var(--primaryColor);
   color: #fff;
+  transition: transform 0.2s ease-in-out;
 }
 
-.proceed button:hover,
-.revBtns button:hover {
+button:hover {
+  background: transparent;
   color: var(--primaryColor);
 }
 
@@ -283,7 +292,7 @@ select.uniChoice {
   padding-bottom: 2rem;
 }
 
-.userInput{
+.userInput {
   padding: 0 0 1.7rem 1.7rem;
 }
 
@@ -299,19 +308,55 @@ select.uniChoice {
   gap: 3rem;
 }
 
-.toPrograms a {
-  color: #fff;
+
+
+/* programs */
+.program {
+  padding-top: 1rem;
 }
 
-.toPrograms:hover a {
+.program .title {
+  text-align: center;
+  padding: 1rem;
+}
+
+.programsContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 2rem;
+  /* background: #000; */
+}
+
+.prog {
+  width: 35%;
+  font-size: 0.9rem;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.prog:hover {
+  scale: 1.02;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.progName {
   color: var(--primaryColor);
 }
 
+
+
 /* footerStlye */
 .footer {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  /* flex-wrap: wrap; */
   gap: 5rem;
   font-size: 0.9rem;
   color: #000;
@@ -319,28 +364,7 @@ select.uniChoice {
   padding: 2rem;
 }
 
+
 .footer h5 {
   color: var(--primaryColor);
 }
-
-/* programs */
-.program{
-  padding-top: 3rem;
-}
-
-.programsContainer{
-  width: 100%;
-  /* background: #000; */
-}
-
-.prog{
-  width: 40%;
-  font-size: 0.9rem;
-  padding: 1rem;
-  
-}
-
-
-/* .prog p{
-
-} */

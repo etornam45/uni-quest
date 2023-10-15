@@ -15,8 +15,6 @@ const DataForm = () => {
         ],
     });
 
-    const [showReview, setShowReview] = useState(false);
-
     const handleSubjectChange = (index, field, value) => {
         const updatedSubjects = [...formData.subjects];
         updatedSubjects[index][field] = value;
@@ -31,6 +29,9 @@ const DataForm = () => {
         console.log(formData);
         setShowReview(true);
     };
+
+    
+    const [showReview, setShowReview] = useState(false);
 
     return (
         <div className="formContainer">
@@ -101,6 +102,7 @@ const DataForm = () => {
 
                     <div className="formInput">
                         <label htmlFor="uniChoice">3. University</label>
+
                         <select
                             name="university"
                             id="university"
@@ -118,7 +120,7 @@ const DataForm = () => {
                                 Kwame Nkrumah University of Science and Technology (KNUST)
                             </option>
                             <option value="LEGON">University of Ghana (LEGON)</option>
-                            <option value="ucc">University of Cape Coast (UCC)</option>
+                            <option value="UCC">University of Cape Coast (UCC)</option>
                             <option value="SDD-UBIDS">
                                 Simon Diedong Dombo University of Business and Integrated
                                 Development Studies (SDD-UBIDS)
@@ -129,7 +131,7 @@ const DataForm = () => {
                         </select>
                     </div>
 
-                    <div className="proceed">
+                    <div className="toRev">
                         <button type="submit">Next</button>
                     </div>
                 </form>

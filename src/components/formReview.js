@@ -58,7 +58,7 @@ const FormReview = ({ formData, onEdit }) => {
 
           <div className="revBtns">
             <button onClick={onEdit}>Edit Form</button>
-            <button className="toPrograms"><Link to='/program'>Proceed</Link></button>
+            <Link to="/programs">Proceed</Link>
           </div>
 
         </>
