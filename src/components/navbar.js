@@ -1,12 +1,20 @@
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <nav className="navBar">
+        <nav>
             <span className="logo">UniQuest</span>
 
-            <div className="nav-links">
+            <span className="menu" onClick={() => {
+                setMenuOpen(!menuOpen);
+            }}><FontAwesomeIcon icon={faBars} style={{color: "#ffffff", fontSize: "2rem"}} /></span>
+
+            <div className={`navLinks ${menuOpen ? "open" : ""}`}>
                 <NavLink exact
                     to="/">
                     Home

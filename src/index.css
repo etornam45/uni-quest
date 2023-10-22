@@ -19,7 +19,7 @@ body {
   --primaryColor: #14BDEB;
 }
 
-.navBar {
+nav {
   position: sticky;
   top: 0;
   z-index: 10;
@@ -33,29 +33,29 @@ body {
   color: #fff;
 }
 
-.navBar .logo {
+nav .logo {
   font-size: 1.7rem;
   font-weight: 600;
 }
 
-.navBar a {
+nav a {
   position: relative;
   text-decoration: none;
-  margin: 0 0.5rem 0 0.5rem;
+  margin: 0 0.5rem;
   padding: 0rem 0.7rem;
   font-weight: 600;
   color: #fff;
 }
 
-.navBar a:not(.active) {
+nav a:not(.active) {
   opacity: 0.9;
 }
 
-.navBar a:not(.active):hover {
+nav a:not(.active):hover {
   opacity: 1;
 }
 
-.navBar a:not(.active):before {
+nav a:not(.active):before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -68,11 +68,11 @@ body {
   transition: transform 0.4s ease-in-out;
 }
 
-.navBar a:not(.active):hover::before {
+nav a:not(.active):hover::before {
   transform: scale(1);
 }
 
-.navBar .active::before {
+nav .active::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -85,42 +85,78 @@ body {
   /* transform: scale(1); */
 }
 
+.menu {
+  display: none;
+}
+
+/* nav media queries */
+@media screen and (min-width: 760px) and (max-width: 1024px) {
+  nav {
+    padding: 0.7rem 3rem;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 760px) {
+  .menu {
+    display: flex;
+    position: absolute;
+    right: 0.7rem;
+  }
+
+  nav {
+    padding: 0.7rem 1rem;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  nav div {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  nav .open {
+    display: flex;
+  }
+
+  nav a {
+    width: 50%;
+    text-align: center;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+  }
+}
+
 
 /* homeStyle */
 .home {
-  position: relative;
-  background-color: #000;
+  padding: 4rem;
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.2), rgba(4, 9, 30, 1)), url(/public/imgs/college.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 90vh;
-  overflow: hidden;
 }
 
-.carou {
-  position: relative;
-  /* width: 100%; */
-  height: 100%;
-}
-
-.carouItem {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.carouItem img {
-  height: 100%;
-  width: 100%;
-  opacity: 0.4;
-}
-
-.carouCap {
-  position: absolute;
-  top: 10%;
-}
-
-.carouCap p:first-child {
+.home h3 {
+  font-weight: 600;
   color: #fff;
-  /* width: 50%; */
-  margin: auto;
+  text-transform: uppercase;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+.caption {
+  width: 70%;
+  color: #fff;
   text-align: center;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
@@ -130,21 +166,17 @@ body {
   border-radius: 1rem;
 }
 
-.carouCap h3 {
-  padding-top: 5rem;
+.toform {
+  margin-top: 3rem;
 }
 
-/* .carouCap {
- margin-top: 3rem;
-} */
-
-.carouCap a,
+.home a,
 .revBtns a,
 .prog a {
   text-decoration: none;
 }
 
-.carouCap a,
+.home a,
 .revBtns a,
 .prog a {
   color: #fff;
@@ -153,7 +185,12 @@ body {
   border: 2px solid var(--primaryColor);
 }
 
-.carouCap a:hover {
+
+.home a {
+  padding: 0.6em 4em;
+}
+
+.home a:hover {
   background: transparent;
 }
 
@@ -163,13 +200,36 @@ body {
   color: var(--primaryColor);
 }
 
+/* home media queries */
+@media screen and (min-width: 760px) and (max-width: 1024px) {}
+
+@media screen and (min-width: 320px) and (max-width: 760px) {
+  .home {
+    padding: 1rem;
+    height: 90vh;
+  }
+
+  .caption {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2.7rem;
+    font-weight: 400;
+    border-radius: 1rem;
+  }
+}
+
+
 /* formStlye */
 .formContainer {
   overflow-x: hidden;
   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.9)), url(/public/imgs/ktech.jpeg);
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-size: cover;
   padding: 2rem 0 2rem 0;
   display: flex;
@@ -194,17 +254,10 @@ form h2 {
 
 form label {
   display: block;
-  font-size: 1.2rem;
+  font-size: 1rem;
   /* font-weight: ; */
   padding-bottom: 0.4rem;
 }
-
-/* .subjects {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
-  width: 90%;
-} */
 
 .sujects {
   display: flex;
@@ -244,6 +297,10 @@ select.uniChoice {
   outline: none;
 }
 
+select option[disabled] {
+  opacity: 0.1;
+}
+
 .toRev {
   display: flex;
   align-items: center;
@@ -261,6 +318,75 @@ button {
 button:hover {
   background: transparent;
   color: var(--primaryColor);
+}
+
+/* form media queries */
+@media screen and (min-width: 760px) and (max-width: 1024px) {
+  .formContainer {
+    padding: 2rem 0;
+  }
+
+  form {
+    width: 80%;
+  }
+
+  .sujects {
+    display: flex;
+    width: 100%;
+  }
+
+  .subject {
+    display: flex;
+    gap: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  .subInput {
+    width: 50%;
+  }
+
+  select.grade {
+    width: 20%;
+  }
+
+  form input,
+  select.uniChoice {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 760px) {
+  .formContainer {
+    padding: 2rem 0;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .sujects {
+    display: flex;
+    width: 100%;
+  }
+
+  .subject {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .subInput {
+    width: 70%;
+  }
+
+  select.grade {
+    width: 30%;
+  }
+
+  form input,
+  select.uniChoice {
+    width: 100%;
+  }
 }
 
 
@@ -308,19 +434,44 @@ button:hover {
   gap: 3rem;
 }
 
+/* form review media queries  */
+@media screen and (min-width: 760px) and (max-width: 1024px) {}
+
+@media screen and (min-width: 320px) and (max-width: 760px) {
+  .reviewContainer {
+    width: 100%;
+    padding: 1rem 0 1rem 0;
+  }
+
+  .review {
+    width: 90%;
+    background: #fff;
+    padding: 1rem;
+  }
+
+  .review h2 {
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  .revBtns {
+    gap: 1rem;
+  }
+}
 
 
 /* programs */
-.program {
+.programsContainer {
   padding-top: 1rem;
+  margin-bottom: 40vh;
 }
 
-.program .title {
+.programsContainer .title {
   text-align: center;
   padding: 1rem;
 }
 
-.programsContainer {
+.programs {
   width: 100%;
   display: flex;
   align-items: center;
@@ -348,6 +499,21 @@ button:hover {
   color: var(--primaryColor);
 }
 
+/* programs media queries  */
+@media screen and (min-width: 760px) and (max-width: 1024px) {
+  .prog {
+    width: 45%;
+    padding: 1.7rem;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 760px) {
+  .prog {
+    width: 100%;
+    padding: 1.7rem;
+  }
+}
+
 
 
 /* footerStlye */
@@ -367,4 +533,17 @@ button:hover {
 
 .footer h5 {
   color: var(--primaryColor);
+}
+
+/* footer media queries  */
+@media screen and (min-width: 760px) and (max-width: 1024px) {
+  
+}
+
+@media screen and (min-width: 320px) and (max-width: 760px) {
+  .footer {
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+  }
 }
