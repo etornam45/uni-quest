@@ -225,16 +225,16 @@ nav .active::before {
 
 /* formStlye */
 .formContainer {
-  overflow-x: hidden;
+  /* overflow-x: hidden;
   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.9)), url(/public/imgs/ktech.jpeg);
   background-repeat: no-repeat;
   background-position: center;
-  /* background-attachment: fixed; */
-  background-size: cover;
+  background-size: cover; */
   padding: 2rem 0 2rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #fff;
 }
 
 form {
@@ -242,10 +242,13 @@ form {
   width: 65%;
   background: #fff;
   padding: 2rem;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease-in-out;
 }
 
 form h2 {
   text-align: center;
+  font-weight: 600;
 }
 
 .formInput {
@@ -254,8 +257,7 @@ form h2 {
 
 form label {
   display: block;
-  font-size: 1rem;
-  /* font-weight: ; */
+  /* font-size: 1.3rem; */
   padding-bottom: 0.4rem;
 }
 
@@ -297,8 +299,9 @@ select.uniChoice {
   outline: none;
 }
 
-select option[disabled] {
-  opacity: 0.1;
+.uniChoice option:nth-child(0),
+.grade option:nth-child(1){
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .toRev {
@@ -398,23 +401,25 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background: #fff; */
-  overflow-x: hidden;
+  /* overflow-x: hidden;
   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.9)), url(/public/imgs/ktech.jpeg);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover; */
 }
 
 .review {
   width: 65%;
   background: #fff;
-  padding: 5rem;
+  padding: 3rem;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease-in-out;
 }
 
 .review h2 {
   text-align: center;
+  font-weight: 600;
   padding-bottom: 2rem;
 }
 
@@ -463,11 +468,12 @@ button:hover {
 /* programs */
 .programsContainer {
   padding-top: 1rem;
-  margin-bottom: 40vh;
+  /* margin-bottom: 40vh; */
 }
 
 .programsContainer .title {
   text-align: center;
+  font-weight: 600;
   padding: 1rem;
 }
 
@@ -477,11 +483,12 @@ button:hover {
   align-items: center;
   justify-content: start;
   padding: 2rem;
-  /* background: #000; */
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .prog {
-  width: 35%;
+  width: 30%;
   font-size: 0.9rem;
   padding: 2rem;
   border-radius: 5px;
@@ -493,6 +500,13 @@ button:hover {
 .prog:hover {
   scale: 1.02;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.prog p{
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .progName {
@@ -526,13 +540,16 @@ button:hover {
   gap: 5rem;
   font-size: 0.9rem;
   color: #000;
-  background: #fff;
+  background: var(--primaryColor);
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
   padding: 2rem;
+  /* position: absolute;
+  top: 80vh; */
 }
 
 
 .footer h5 {
-  color: var(--primaryColor);
+  color: #fff;
 }
 
 /* footer media queries  */

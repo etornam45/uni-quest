@@ -42,7 +42,7 @@ const DataForm = () => {
                     <h2>Fill this form</h2>
 
                     <div className="formInput">
-                        <label htmlFor="course">1. Course</label>
+                        <label htmlFor="course"><strong>1. Course</strong></label>
                         <input
                             type="text"
                             name="course"
@@ -57,7 +57,7 @@ const DataForm = () => {
                     </div>
 
                     <div className="formInput">
-                        <label htmlFor="subjects">2. Subjects and Grades</label>
+                        <label htmlFor="subjects"><strong>2. Subjects and Grades</strong></label>
 
                         <div className="subjects">
                             {formData.subjects.map((subject, index) => (
@@ -101,7 +101,7 @@ const DataForm = () => {
                     </div>
 
                     <div className="formInput">
-                        <label htmlFor="uniChoice">3. University</label>
+                        <label htmlFor="uniChoice"><strong>3. University</strong></label>
 
                         <select
                             name="university"

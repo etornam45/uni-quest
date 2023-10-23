@@ -11,7 +11,7 @@ const Home = () => {
             </div>
             
             <div className="toform">
-                <Link to="/data-form">start</Link>
+                <Link to="/data-form">Get started</Link>
             </div>
         </div>
 
