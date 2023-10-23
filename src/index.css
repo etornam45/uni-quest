@@ -225,16 +225,16 @@ nav .active::before {
 
 /* formStlye */
 .formContainer {
-  /* overflow-x: hidden;
-  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.9)), url(/public/imgs/ktech.jpeg);
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.9)), url(/public/imgs/bluelap.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover; */
+  background-size: cover;
   padding: 2rem 0 2rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
+  /* background: #fff; */
 }
 
 form {
@@ -401,12 +401,11 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* overflow-x: hidden;
-  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.9)), url(/public/imgs/ktech.jpeg);
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.9)), url(/public/imgs/notebook.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;
-  background-size: cover; */
+  background-size: cover;
 }
 
 .review {
@@ -540,7 +539,7 @@ button:hover {
   gap: 5rem;
   font-size: 0.9rem;
   color: #000;
-  background: var(--primaryColor);
+  background: #fff;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
   padding: 2rem;
   /* position: absolute;
@@ -549,7 +548,7 @@ button:hover {
 
 
 .footer h5 {
-  color: #fff;
+  color: var(--primaryColor);
 }
 
 /* footer media queries  */
