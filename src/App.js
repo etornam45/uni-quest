@@ -31,7 +31,7 @@ function App() {
             </Route>
           </Switch>
         </div>
-        <Footer path='/about'/>
+        <Footer path='/about' />
       </div>
     </Router>
   );
