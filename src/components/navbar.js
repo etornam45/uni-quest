@@ -16,7 +16,7 @@ const Navbar = () => {
 
             <div className={`navLinks ${menuOpen ? "open" : ""}`}>
                 <NavLink exact
-                    to="/home">
+                    to="/">
                     Home
                 </NavLink>
                 <NavLink to="/about" >

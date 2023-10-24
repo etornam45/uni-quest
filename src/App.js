@@ -15,23 +15,24 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
+
         <div className="content">
           <Switch>
-            <Route exact path="/home">
+            <Route exact path="/">
               <Home />
             </Route>
             <Route path="/data-form">
               <DataForm />
             </Route>
-            <Route path='/programs'>
+            <Route path="/programs">
               <Programs />
             </Route>
-            <Route path='/program'>
+            <Route path="/program">
               <Program />
             </Route>
           </Switch>
         </div>
-        <Footer path='/about' />
+        <Footer />
       </div>
     </Router>
   );
