@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
 
       <Routes>
-        <Route path='/' element={<SharedLayout />} >
+        <Route path='uni-quest' element={<SharedLayout />} >
           <Route index element={<Home />} />
           <Route path='data-form' element={<DataForm />} />
           <Route path='programs' element={<Programs />} />
