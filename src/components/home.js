@@ -3,18 +3,20 @@ import { Link } from "react-router-dom";
 const Home = () => {
 
     return (
+        
+            <div className="home">
+                <h3>Explore Your Ideal Universities. Discover the Perfect Program</h3>
+                <div className="caption">
+                    <p>With countless universities to choose from, the decision can be daunting. We
+                        simplify the process by matching your profile to universities that align with your academic achievements and career goals. Discover institutions that will nurture your potential.
+                    </p>
+                </div>
 
-        <div className="home">
-            <h3>Lorem ipsum dolor sit amet.</h3>
-            <div className="caption">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore sed magni nulla, minus labore fugit rerum pariatur repudiandae at laudantium?</p>
+                <div className="toform">
+                    <p>Ready to explore your path to university?</p>
+                    <Link to="/data-form">Let's get started</Link>
+                </div>
             </div>
-            
-            <div className="toform">
-                <Link to="/data-form">Get started</Link>
-            </div>
-        </div>
-
     );
 }
 

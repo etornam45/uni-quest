@@ -12,11 +12,10 @@ const Navbar = () => {
 
             <span className="menu" onClick={() => {
                 setMenuOpen(!menuOpen);
-            }}><FontAwesomeIcon icon={faBars} style={{color: "#ffffff", fontSize: "2rem"}} /></span>
+            }}><FontAwesomeIcon icon={faBars} style={{ color: "#ffffff", fontSize: "2rem" }} /></span>
 
             <div className={`navLinks ${menuOpen ? "open" : ""}`}>
-                <NavLink exact
-                    to="/">
+                <NavLink to="/">
                     Home
                 </NavLink>
                 <NavLink to="/about" >

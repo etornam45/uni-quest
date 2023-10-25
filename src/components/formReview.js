@@ -17,7 +17,7 @@ const FormReview = ({ formData, onEdit }) => {
 
       <div className="review">
         <>
-          <h2>Review Data</h2>
+          <h2>Form review</h2>
 
 
           <div className="userInput">

@@ -7,11 +7,11 @@ const DataForm = () => {
         university: "",
         subjects: [
             { subject: "", grade: "" },
-            // { subject: "", grade: "" },
-            // { subject: "", grade: "" },
-            // { subject: "", grade: "" },
-            // { subject: "", grade: "" },
-            // { subject: "", grade: "" },
+            { subject: "", grade: "" },
+            { subject: "", grade: "" },
+            { subject: "", grade: "" },
+            { subject: "", grade: "" },
+            { subject: "", grade: "" },
         ],
     });
 

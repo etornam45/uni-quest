@@ -17,6 +17,7 @@ body {
 
 :root {
   --primaryColor: #14BDEB;
+  --secondaryColor: #164461;
 }
 
 nav {
@@ -120,6 +121,7 @@ nav .active::before {
 
   nav .open {
     display: flex;
+    border-top: 2px solid #fff;
   }
 
   nav a {
@@ -136,7 +138,7 @@ nav .active::before {
   position: relative;
   padding: 4rem;
   overflow-x: hidden;
-  background-image: linear-gradient(rgba(4, 9, 30, 0.2), rgba(4, 9, 30, 1)), url(/public/imgs/college.jpg);
+  background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 1)), url(/public/imgs/college.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -162,13 +164,18 @@ nav .active::before {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 2.7rem;
+  padding: 2rem;
   font-weight: 400;
   border-radius: 1rem;
 }
 
 .toform {
-  margin-top: 3rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.toform p{
+  color: #fff;
 }
 
 .home a,
@@ -212,14 +219,11 @@ nav .active::before {
 
   .caption {
     width: 100%;
-    color: #fff;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 2.7rem;
-    font-weight: 400;
-    border-radius: 1rem;
+    padding: 2rem;
+  }
+
+  .home a {
+    padding: 0.6em 2em;
   }
 }
 
@@ -250,6 +254,7 @@ form {
 form h2 {
   text-align: center;
   font-weight: 600;
+  color: var(--secondaryColor);
 }
 
 .formInput {
@@ -366,6 +371,11 @@ button:hover {
 
   form {
     width: 90%;
+    padding: 1rem;
+  }
+
+  .formInput {
+    padding: 1rem 0;
   }
 
   .sujects {
@@ -421,6 +431,7 @@ button:hover {
   text-align: center;
   font-weight: 600;
   padding-bottom: 2rem;
+  color: var(--secondaryColor);
 }
 
 .userInput {
@@ -475,6 +486,7 @@ button:hover {
   text-align: center;
   font-weight: 600;
   padding: 1rem;
+  color: var(--secondaryColor);
 }
 
 .programs {
@@ -510,7 +522,7 @@ button:hover {
 }
 
 .progName {
-  color: var(--primaryColor);
+  color: var(--secondaryColor);
 }
 
 /* programs media queries  */
@@ -524,7 +536,7 @@ button:hover {
 @media screen and (min-width: 320px) and (max-width: 760px) {
   .prog {
     width: 100%;
-    padding: 1.7rem;
+    padding: 1.4rem;
   }
 }
 
@@ -549,7 +561,7 @@ button:hover {
 
 
 .footer h5 {
-  color: var(--primaryColor);
+  color: #16446a;
 }
 
 /* footer media queries  */
@@ -562,5 +574,7 @@ button:hover {
     flex-wrap: wrap;
     gap: 2rem;
     padding: 2rem;
+    font-size: 0.7rem;
+    gap: 2rem;
   }
 }
