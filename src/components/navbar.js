@@ -15,7 +15,7 @@ const Navbar = () => {
             }}><FontAwesomeIcon icon={faBars} style={{ color: "#ffffff", fontSize: "2rem" }} /></span>
 
             <div className={`navLinks ${menuOpen ? "open" : ""}`}>
-                <NavLink to="/uni-quest">
+                <NavLink to="/">
                     Home
                 </NavLink>
                 <NavLink to="/about" >

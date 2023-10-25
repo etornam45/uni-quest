@@ -1,5 +1,4 @@
 {
-  "homepage": "https://Code-hokage.github.io/uni-quest",
   "name": "uni-quest",
   "version": "0.1.0",
   "private": true,
@@ -19,10 +18,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "clean": "gh-pages-clean",
-    "postdeploy": "gh-pages-clean",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -47,7 +42,6 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@types/react-router-dom": "^5.3.3",
-    "gh-pages": "^6.0.0"
+    "@types/react-router-dom": "^5.3.3"
   }
 }
