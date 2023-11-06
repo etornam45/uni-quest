@@ -13,7 +13,6 @@ const FormReview = ({ formData, onEdit }) => {
   }, [formData]);
 
   return (
-    <div className="reviewContainer">
 
       <div className="review">
         <>
@@ -57,13 +56,12 @@ const FormReview = ({ formData, onEdit }) => {
           </div>
 
           <div className="revBtns">
-            <button onClick={onEdit}>Edit form</button>
-            <Link to="/programs">Proceed</Link>
+            <button onClick={onEdit}>Edit Inputs</button>
+            <button><Link to="/programs">Proceed</Link></button>
           </div>
 
         </>
       </div>
-    </div>
   );
 };
 
