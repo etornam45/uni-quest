@@ -5,7 +5,7 @@ const Programs = () => {
     return (
         <div className="programsContainer">
             <div className="title">
-                <h2>Recommended programs.</h2>
+                <h2>Recommended programs</h2>
             </div>
 
             <div className="programsFilter">
