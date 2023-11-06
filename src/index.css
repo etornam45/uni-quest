@@ -129,94 +129,52 @@ nav .navLinks .active::before {
   transition: 0.5s;
 }
 
-/* search */
-/* .searchBar{
-  display: block;
-} */
-
 .searchContainer {
   position: relative;
-  box-sizing: border-box;
-  width: fit-content;
+  --size-button: 30px;
+  color: white;
 }
 
-.mainbox {
-  box-sizing: border-box;
-  position: relative;
-  width: 230px;
-  height: 40px;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  border-bottom: 1px solid #fff;
-  transition: all 0.3s ease;
-}
-
-.checkbox:focus {
+.searchContainer .input {
+  padding-left: var(--size-button);
+  height: var(--size-button);
+  font-size: 0.9rem;
   border: none;
+  /* border-bottom: 1px solid #fff; */
+  color: #fff;
   outline: none;
-}
-
-.checkbox:checked {
-  right: 10px;
-}
-
-.checkbox:checked~.mainbox {
-  width: 50px;
-}
-
-.checkbox:checked~.mainbox .search_input {
-  width: 0;
-  height: 0px;
-}
-
-.checkbox:checked~.mainbox .iconContainer {
-  padding-right: 8px;
-}
-
-.checkbox {
-  box-sizing: border-box;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  right: 17px;
-  top: 10px;
-  z-index: 9;
+  width: var(--size-button);
+  transition: all ease 0.3s;
+  background: transparent;
   cursor: pointer;
-  appearance: none;
 }
 
-.search_input {
-  box-sizing: border-box;
+.searchContainer .input:focus,
+.searchContainer .input:not(:invalid) {
+  width: 200px;
+  cursor: text;
+  border-bottom: 1px solid #fff;
+}
+
+.searchContainer .input:focus + .icon,
+.searchContainer .input:not(:invalid) + .icon {
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.searchContainer .icon {
+  position: absolute;
+  width: var(--size-button);
+  height: var(--size-button);
+  top: 0;
+  left: 0;
+  padding: 6px;
+  pointer-events: none;
+}
+
+.searchContainer .icon .searchIcon {
+  width: 100%;
   height: 100%;
-  width: 170px;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  /* padding-left: 5px; */
-  font-size: 1em;
-  color: #ffffff;
-  transition: all 0.3s ease;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.search_input::placeholder {
-  color: #ffffff;
-}
-
-.iconContainer {
-  box-sizing: border-box;
-  padding-top: 5px;
-  width: fit-content;
-  transition: all 0.3s ease;
-}
-
-.search_icon {
-  box-sizing: border-box;
-  fill: #ffffff;
-  font-size: 1.3em;
 }
 
 .menu {
@@ -228,10 +186,6 @@ nav .navLinks .active::before {
   nav {
     padding: 0.7rem 3rem;
   }
-
-  nav .searchBar {
-    display: none;
-  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
@@ -239,6 +193,13 @@ nav .navLinks .active::before {
     display: flex;
     position: absolute;
     right: 0.7rem;
+  }
+
+  .searchContainer {
+    display: flex;
+    position: absolute;
+    right: 3.5rem;
+    bottom: 1rem;
   }
 
   nav {
@@ -274,10 +235,6 @@ nav .navLinks .active::before {
     text-align: center;
     margin: 0.5rem 0;
     padding: 0.5rem 0;
-  }
-
-  .searchBar {
-    display: none;
   }
 }
 
@@ -415,15 +372,10 @@ figure.stage img {
 figure.stage figcaption {
   position: relative;
   width: 60%;
+  padding: 1rem;
   background-color: #ffffff;
   border-radius: 8px 0 0 8px;
 }
-
-/* figure.stage figcaption p,
-figure.stage figcaption h4 {
-  padding-left: 0.9rem;
-} */
-
 
 figure.stage .arrow {
   top: 30px;
@@ -929,9 +881,22 @@ select.choice {
   color: var(--secondaryColor);
 }
 
-.prog button:hover a {
+.relatedPrograms button,
+.programs button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+
+.prog button:hover a,
+.prog button:hover .fa-icon,
+.relatedProg button:hover a,
+.relatedProg button:hover .fa-ion{
   color: var(--primaryColor);
 }
+
 
 .relatedProgramsCont {
   color: #000;
