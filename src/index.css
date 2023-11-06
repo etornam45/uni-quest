@@ -423,10 +423,10 @@ figure.stage figcaption {
   border-radius: 8px 0 0 8px;
 }
 
-figure.stage figcaption p,
+/* figure.stage figcaption p,
 figure.stage figcaption h4 {
   padding-left: 0.9rem;
-}
+} */
 
 
 figure.stage .arrow {
@@ -462,10 +462,6 @@ figure.stage .arrow {
 .caseBox {
   width: 40%;
   transition: .4s;
-}
-
-.caseBox:hover {
-  transform: scale(1.1);
 }
 
 .caseBox:hover h2 {
@@ -598,6 +594,10 @@ figure.stage .arrow {
     width: 100%;
   }
 
+  figure.stage figcaption {
+    padding: 0.5rem;
+  }
+
   /* case */
   .showContent {
     gap: 2rem;
@@ -670,7 +670,7 @@ form h2 {
 }
 
 .formInput {
-  padding: 1.3rem 0;
+  padding: 1rem 0;
 }
 
 form label {
@@ -855,7 +855,7 @@ select.choice {
   }
 
   .review {
-    width: 90%;
+    width: 100%;
     background: #fff;
     padding: 1rem;
   }
@@ -884,7 +884,7 @@ select.choice {
   overflow-x: hidden;
   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.9)), url(https://img.freepik.com/free-photo/person-front-computer-working-html_23-2150040428.jpg?w=740&t=st=1699275436~exp=1699276036~hmac=dec3a8872e78297c957ff1be74917c0f93fafb5b22e1bafaf7dae320dbe75010);
   background-repeat: no-repeat;
-  background-position:center;
+  background-position: center;
   background-size: cover;
   color: #fff;
 }
@@ -968,6 +968,7 @@ select.choice {
   .relatedProg {
     width: 100%;
   }
+
   .prog {
     width: 100%;
     padding: 1.4rem;
