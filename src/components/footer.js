@@ -2,7 +2,7 @@ const Footer = () => {
     return ( 
         <div className="footer">
             <div className="text about">
-                <h5>About</h5>
+                <h5>UNIQUEST</h5>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, quam? Possimus natus ad sequi consequatur qui architecto nulla quae iste atque tempora distinctio illo ex veniam earum, neque fuga officia molestias eum ipsum corporis perferendis!
             </div>
             <div className="text contact">
