@@ -58,7 +58,7 @@ nav {
   align-items: end;
   justify-content: space-between;
   letter-spacing: 1px;
-  color: #fff;
+  color: var(--secondaryColor);
   transition: 0.5s;
 }
 
@@ -88,17 +88,17 @@ nav .navLinks a {
   text-decoration: none;
   margin: 0 0.5rem;
   padding: 0rem 0.7rem;
-  /* font-weight: 600; */
   color: #fff;
 }
 
+/* 
 nav .navLinks a:not(.active) {
   opacity: 0.9;
 }
 
 nav .navLinks a:not(.active):hover {
   opacity: 1;
-}
+} */
 
 nav .navLinks a:not(.active):before {
   content: "";
@@ -156,8 +156,8 @@ nav .navLinks .active::before {
   border-bottom: 1px solid #fff;
 }
 
-.searchContainer .input:focus + .icon,
-.searchContainer .input:not(:invalid) + .icon {
+.searchContainer .input:focus+.icon,
+.searchContainer .input:not(:invalid)+.icon {
   pointer-events: all;
   cursor: pointer;
 }
@@ -179,6 +179,11 @@ nav .navLinks .active::before {
 
 .menu {
   display: none;
+}
+
+nav .menu .menuIcon{
+  font-size: 2rem;
+  color: #fff;
 }
 
 /* nav media queries */
@@ -203,11 +208,19 @@ nav .navLinks .active::before {
   }
 
   nav {
-    background: rgb(0, 0, 0);
+    background: #fff;
     backdrop-filter: blur(15px);
     padding: 1rem 1rem;
     flex-direction: column;
     align-items: start;
+  }
+
+  nav .logo a {
+    color: var(--secondaryColor);
+  }
+
+  nav.sticky {
+    background: #fff;
   }
 
   nav .navLinks {
@@ -235,6 +248,28 @@ nav .navLinks .active::before {
     text-align: center;
     margin: 0.5rem 0;
     padding: 0.5rem 0;
+  }
+
+nav .menu .menuIcon{
+  color: var(--secondaryColor);
+}
+
+.searchContainer {
+  color: var(--secondaryColor);
+}
+
+.searchContainer .input {
+  color: var(--secondaryColor);
+}
+
+  .searchContainer .input:focus,
+  .searchContainer .input:not(:invalid) {
+    width: 150px;
+    border-bottom: 1px solid var(--secondaryColor);
+  }
+
+  .searchContainer .icon .searchIcon {
+    color: var(--secondaryColor);
   }
 }
 
@@ -882,7 +917,7 @@ select.choice {
 }
 
 .relatedPrograms button,
-.programs button{
+.programs button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -893,7 +928,7 @@ select.choice {
 .prog button:hover a,
 .prog button:hover .fa-icon,
 .relatedProg button:hover a,
-.relatedProg button:hover .fa-ion{
+.relatedProg button:hover .fa-ion {
   color: var(--primaryColor);
 }
 
