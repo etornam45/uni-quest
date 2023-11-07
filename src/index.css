@@ -181,7 +181,7 @@ nav .navLinks .active::before {
   display: none;
 }
 
-nav .menu .menuIcon{
+nav .menu .menuIcon {
   font-size: 2rem;
   color: #fff;
 }
@@ -250,17 +250,17 @@ nav .menu .menuIcon{
     padding: 0.5rem 0;
   }
 
-nav .menu .menuIcon{
-  color: var(--secondaryColor);
-}
+  nav .menu .menuIcon {
+    color: var(--secondaryColor);
+  }
 
-.searchContainer {
-  color: var(--secondaryColor);
-}
+  .searchContainer {
+    color: var(--secondaryColor);
+  }
 
-.searchContainer .input {
-  color: var(--secondaryColor);
-}
+  .searchContainer .input {
+    color: var(--secondaryColor);
+  }
 
   .searchContainer .input:focus,
   .searchContainer .input:not(:invalid) {
@@ -974,32 +974,132 @@ select.choice {
 
 
 /* footerStlye */
+footer {
+  width: 100vw;
+  background: #000000;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
 .footer {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
-  gap: 5rem;
   font-size: 0.9rem;
-  color: #ffffff;
-  background: #000000;
-  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
-  padding: 2rem;
+  padding: 2rem 4rem;
+  text-align: left;
 }
 
-/* .footer h5 {
-  color: #16446a;
-} */
+.footer .uniquest {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-right: 5rem;
+}
+
+.footer .uniquest .social {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 2rem;
+}
+
+.footer .uniquest .social .socialIcon {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.footer .aboutContact {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+footer ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer ul li {
+  list-style-type: none;
+  padding: 0.7rem 0;
+}
+
+.footer ul li .arrow {
+  color: #fff;
+  font-size: 0.6rem;
+  padding-bottom: 0.1rem;
+}
+
+.footer ul li a {
+  padding: 0 0.5rem;
+}
+
+footer .cprt {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.cprt div {
+  width: 70%;
+  height: 1px;
+  background: #fff;
+}
+
+.cprt p {
+  font-size: 0.7rem;
+  padding: 0.5rem;
+}
 
 /* footer media queries  */
-@media screen and (min-width: 760px) and (max-width: 1024px) {}
+@media screen and (min-width: 760px) and (max-width: 1024px) {
+  .footer .uniquest {
+    width: 55%;
+    gap: 2rem;
+    padding-right: 4rem;
+  }
+
+  .footer .uniquest .social .socialIcon {
+    font-size: 1.7rem;
+  }
+}
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
+  
   .footer {
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 2rem;
+    width: 100%;
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+  
+  .footer .uniquest {
+    width: 100%;
+    gap: 1rem;
+    padding-right: 0;
+  }
+  
+  .footer .uniquest .social {
+    width: 100%;
     font-size: 0.7rem;
+    gap: 2rem;
+  }
+  
+  .footer .uniquest .social .socialIcon {
+    color: #fff;
+    font-size: 1.7rem;
+  }
+  
+  .footer .aboutContact {
+    width: 100%;
+    justify-content: start;
+    padding-top: 2rem;
     gap: 2rem;
   }
 }
