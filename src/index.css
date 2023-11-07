@@ -995,7 +995,7 @@ footer {
   width: 60%;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
   padding-right: 5rem;
 }
 
@@ -1008,7 +1008,7 @@ footer {
 
 .footer .uniquest .social .socialIcon {
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 
 .footer .aboutContact {
