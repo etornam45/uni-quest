@@ -24,6 +24,23 @@ body a {
   color: #fff;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: crimson;
+  border-radius: 10px;
+}
+
 /* buttons */
 body button {
   width: 10rem;
@@ -970,6 +987,79 @@ select.choice {
     padding: 1.4rem;
   }
 }
+
+/* program */
+.programContainer {
+  width: 100vw;
+  position: relative;
+  background: #000 !important;
+}
+
+.programTitle {
+  width: 100%;
+  font-weight: 600;
+  padding: 15rem 0 2rem 4.8rem;
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(4, 9, 30, 0), rgba(4, 9, 30, 1)), url(/public/imgs/comp-science.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+}
+
+section.main{
+  width: 100%;
+  background: #fff !important;
+  padding: 5rem 13rem;
+  color: #000 !important;
+  border-radius: 40px 40px 0 0 ;
+}
+
+section .main h3{
+  font-weight: 600;
+}
+
+section .main p{
+  font-size: 1rem;
+}
+
+section .aims,
+section .overview,
+section .institutions,
+section .subjectsCombination{
+  padding-bottom: 3rem;
+}
+
+section .aims h3 span,
+section .overview h3 span,
+section .institutions h3 span,
+section .subjectsCombination h3 span{
+  display: inline-block;
+  width: 0.4rem;
+  height: 1.7rem;
+  margin-right: 0.3rem;
+  background: crimson;
+}
+
+section .subjectsCombination{
+  font-size: 1rem;
+}
+
+section .subjectsCombination .subjects{
+  padding: 0.8rem;
+  display: flex;
+  align-items: start;
+  gap: 4rem;
+}
+
+section .institutions ul,
+section .subjectsCombination ul{
+font-size: 1rem;
+margin: 0;
+}
+
+
+/* program media queries */
 
 
 
