@@ -72,7 +72,7 @@ nav {
   margin: -70px 0;
   padding: 0.5rem 5rem 1rem 5rem;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
   letter-spacing: 1px;
   color: var(--secondaryColor);
@@ -96,7 +96,7 @@ nav .logo a {
 
 nav .navRight {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: center;
 }
 
@@ -229,7 +229,7 @@ nav .menu .menuIcon {
     backdrop-filter: blur(15px);
     padding: 1rem 1rem;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
   }
 
   nav .logo a {
@@ -395,7 +395,7 @@ nav .menu .menuIcon {
   gap: 3rem;
 }
 
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+/* @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css); */
 
 figure.stage {
   position: relative;
@@ -452,7 +452,7 @@ figure.stage .arrow {
 .showContent {
   width: 100%;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
   gap: 3rem;
@@ -638,8 +638,8 @@ figure.stage .arrow {
   background-size: cover;
   padding: 13rem 4rem 4rem 4rem;
   display: flex;
-  align-items: start;
-  justify-content: end;
+  align-items: flex-start;
+  justify-content: flex-end;
   gap: 3rem;
 }
 
@@ -690,7 +690,11 @@ form label {
   margin-bottom: 1rem;
 }
 
-.subInput {
+form select option{
+  font-size: 1rem;
+}
+
+select.subInput {
   width: 60%;
   background: transparent;
   border: 2px solid rgba(0, 0, 0, 40%);
@@ -873,6 +877,7 @@ select.choice {
 
 /* programs */
 .programsContainer {
+  position: relative;
   width: 100vw;
 }
 
@@ -889,10 +894,20 @@ select.choice {
   color: #fff;
 }
 
+.programsMain{
+  position: relative;
+  width: 100%;
+  display: flex;
+}
 
 .programsFilter {
-  width: 100%;
+  width: 25%;
+  position: sticky;
   background: var(--secondaryColor);
+}
+
+.allPrograms{
+  width: 75%;
 }
 
 .relatedPrograms,
@@ -901,14 +916,14 @@ select.choice {
   color: #000;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   padding: 2rem;
   gap: 2rem;
   flex-wrap: wrap;
 }
 
-.prog {
-  width: 30%;
+.progBox {
+  width: 45%;
   font-size: 0.9rem;
   padding: 2rem;
   border-radius: 5px;
@@ -917,12 +932,12 @@ select.choice {
   cursor: pointer;
 }
 
-.prog:hover {
+.progBox:hover {
   scale: 1.02;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
 }
 
-.prog p {
+.progBox p {
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
@@ -942,10 +957,10 @@ select.choice {
 }
 
 
-.prog button:hover a,
-.prog button:hover .fa-icon,
-.relatedProg button:hover a,
-.relatedProg button:hover .fa-ion {
+.progBox button:hover a,
+.progBox button:hover .fa-icon,
+.relatedProgBox button:hover a,
+.relatedProgBox button:hover .fa-ion {
   color: var(--primaryColor);
 }
 
@@ -959,7 +974,7 @@ select.choice {
   text-align: center;
 }
 
-.relatedProg {
+.relatedProgBox {
   width: 40%;
   font-size: 0.9rem;
   padding: 2rem;
@@ -971,18 +986,18 @@ select.choice {
 
 /* programs media queries  */
 @media screen and (min-width: 760px) and (max-width: 1024px) {
-  .prog {
+  .progBox {
     width: 45%;
     padding: 1.7rem;
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
-  .relatedProg {
+  .relatedProgBox {
     width: 100%;
   }
 
-  .prog {
+  .progBox {
     width: 100%;
     padding: 1.4rem;
   }
@@ -1048,7 +1063,7 @@ section .subjectsCombination{
 section .subjectsCombination .subjects{
   padding: 0.8rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   gap: 4rem;
 }
 
@@ -1074,7 +1089,7 @@ footer {
 .footer {
   width: 100%;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   font-size: 0.9rem;
   padding: 2rem 4rem;
@@ -1092,7 +1107,7 @@ footer {
 .footer .uniquest .social {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 2rem;
 }
 
@@ -1188,7 +1203,7 @@ footer .cprt {
   
   .footer .aboutContact {
     width: 100%;
-    justify-content: start;
+    justify-content: flex-start;
     padding-top: 2rem;
     gap: 2rem;
   }

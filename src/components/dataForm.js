@@ -88,7 +88,7 @@ const DataForm = () => {
                                             required
                                         >
                                             <option value="" disabled>
-                                                {`Subject ${index + 1}`}
+                                                {`subject ${index + 1}`}
                                             </option>
                                             <option value="English">English</option>
                                             <option value="Core Maths">Core Maths</option>

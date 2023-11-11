@@ -46,7 +46,7 @@ const Home = () => {
                             <p>Sometimes I think the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.</p>
                             <div class="arrow"></div>
                         </figcaption>
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample10.jpg" alt="sq-sample10" />
+                        <img src="/images/high-school.jpg" alt="sq-sample10" />
                     </figure>
 
                     <figure class="stage">
@@ -55,7 +55,7 @@ const Home = () => {
                             <p>Sometimes I think the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.</p>
                             <div class="arrow"></div>
                         </figcaption>
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample10.jpg" alt="sq-sample10" />
+                        <img src="/images/high-school.jpg" />
                     </figure>
 
                     <figure class="stage">
@@ -64,7 +64,7 @@ const Home = () => {
                             <p>Sometimes I think the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.</p>
                             <div class="arrow"></div>
                         </figcaption>
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample10.jpg" alt="sq-sample10" />
+                        <img src="/images/working-professional.jpg" alt="sq-sample10" />
                     </figure>
 
                     <figure class="stage">
@@ -73,7 +73,7 @@ const Home = () => {
                             <p>Sometimes I think the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.</p>
                             <div class="arrow"></div>
                         </figcaption>
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample10.jpg" alt="sq-sample10" />
+                        <img src="/images/career-changer.jpg" alt="sq-sample10" />
                     </figure>
 
                 </div>

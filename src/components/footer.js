@@ -13,11 +13,11 @@ const Footer = () => {
                         <p>Get information about every tertiary program, school, available scholarships,  and career opportunities in one place.</p>
                     </div>
                     <div className="social">
-                        <a href=""><FontAwesomeIcon icon={faSquareTwitter} className="socialIcon" /></a>
+                        <a href="https://www.google.com"><FontAwesomeIcon icon={faSquareTwitter} className="socialIcon" /></a>
 
-                        <a href=""><FontAwesomeIcon icon={faSquareInstagram} className="socialIcon" /></a>
+                        <a href="https://www.google.com"><FontAwesomeIcon icon={faSquareInstagram} className="socialIcon" /></a>
 
-                        <a href=""><FontAwesomeIcon icon={faSquareFacebook} className="socialIcon" /></a>
+                        <a href="https://www.google.com"><FontAwesomeIcon icon={faSquareFacebook} className="socialIcon" /></a>
                     </div>
                 </div>
 
