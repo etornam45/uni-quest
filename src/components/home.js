@@ -55,7 +55,7 @@ const Home = () => {
                             <p>Sometimes I think the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.</p>
                             <div class="arrow"></div>
                         </figcaption>
-                        <img src="/images/high-school.jpg" />
+                        <img src="/images/undergraduate.jpg" />
                     </figure>
 
                     <figure class="stage">

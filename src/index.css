@@ -26,7 +26,7 @@ body a {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 7px;
 }
 
 /* Track */
@@ -79,9 +79,9 @@ nav {
   transition: 0.5s;
 }
 
-nav.sticky {
-  /* background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(15px); */
+.sticky {
+  position: sticky;
+  top: 0;
   background: #000;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 60%);
 }
@@ -107,15 +107,6 @@ nav .navLinks a {
   padding: 0rem 0.7rem;
   color: #fff;
 }
-
-/* 
-nav .navLinks a:not(.active) {
-  opacity: 0.9;
-}
-
-nav .navLinks a:not(.active):hover {
-  opacity: 1;
-} */
 
 nav .navLinks a:not(.active):before {
   content: "";
@@ -311,7 +302,7 @@ nav .menu .menuIcon {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 1)), url(/public/imgs/college.jpg);
+  background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 1)), url(/public/images/college.jpg);
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -399,6 +390,9 @@ nav .menu .menuIcon {
 
 figure.stage {
   position: relative;
+  max-height: 30vh;
+  min-height: 27vh;
+  height: 100%;
   min-width: 35vw;
   max-width: 40vw;
   width: 100%;
@@ -411,12 +405,13 @@ figure.stage {
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
 }
 
-figure.stage * {
+/* figure.stage * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-}
+} */
 
 figure.stage img {
+  height: 100%;
   max-width: 40%;
   vertical-align: middle;
 }
@@ -480,7 +475,7 @@ figure.stage .arrow {
 
 .cta {
   width: 90%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/public/imgs/african-s.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/public/images/african-s.jpg);
   background-position: center;
   background-size: cover;
   border-radius: 10px;
@@ -632,7 +627,7 @@ figure.stage .arrow {
   position: relative;
   width: 100vw;
   overflow-x: hidden;
-  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.9)), url(/public/imgs/bluelap.jpg);
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.9)), url(/public/images/bluelap.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -644,12 +639,12 @@ figure.stage .arrow {
 }
 
 .formPage .note {
-  width: 40%;
+  width: 30%;
   padding: 3rem;
 }
 
 .formContainer {
-  width: 60%;
+  width: 70%;
 }
 
 form {
@@ -679,8 +674,9 @@ form label {
   padding-bottom: 0.4rem;
 }
 
-.sujects {
+.subjects {
   display: flex;
+  flex-direction: column;
   width: 90%;
 }
 
@@ -887,7 +883,7 @@ select.choice {
   font-weight: 600;
   padding: 13rem 0 5rem 0;
   overflow-x: hidden;
-  background-image: linear-gradient(rgba(4, 9, 30, 0.1), rgba(4, 9, 30, 1)), url(/public/imgs/education.jpg);
+  background-image: linear-gradient(rgba(4, 9, 30, 0.1), rgba(4, 9, 30, 1)), url(/public/images/education.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -902,12 +898,13 @@ select.choice {
 
 .programsFilter {
   width: 25%;
-  position: sticky;
+  padding: 2rem;
   background: var(--secondaryColor);
 }
 
 .allPrograms{
   width: 75%;
+  padding-left: 3rem;
 }
 
 .relatedPrograms,
@@ -923,7 +920,7 @@ select.choice {
 }
 
 .progBox {
-  width: 45%;
+  width: 85%;
   font-size: 0.9rem;
   padding: 2rem;
   border-radius: 5px;
@@ -975,7 +972,7 @@ select.choice {
 }
 
 .relatedProgBox {
-  width: 40%;
+  width: 45%;
   font-size: 0.9rem;
   padding: 2rem;
   border-radius: 5px;
@@ -1015,7 +1012,7 @@ select.choice {
   font-weight: 600;
   padding: 15rem 0 2rem 4.8rem;
   overflow-x: hidden;
-  background-image: linear-gradient(rgba(4, 9, 30, 0), rgba(4, 9, 30, 1)), url(/public/imgs/comp-science.jpg);
+  background-image: linear-gradient(rgba(4, 9, 30, 0), rgba(4, 9, 30, 1)), url(/public/images/comp-science.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
