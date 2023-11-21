@@ -707,6 +707,7 @@ select.grade {
   border-radius: 10px;
   outline: none;
   display: inline;
+  text-align: center;
 }
 
 select.choice {

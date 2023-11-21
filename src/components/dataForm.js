@@ -4,7 +4,6 @@ import FormReview from "./formReview";
 const DataForm = () => {
     const [formData, setFormData] = useState({
         course: "",
-        university: "",
         coreSubjects: Array(3).fill({ subject: "", grade: "" }),
         electiveSubjects: Array(3).fill({ subject: "", grade: "" }),
     });
@@ -14,58 +13,45 @@ const DataForm = () => {
     const [coreSubjects, setCoreSubjects] = useState([]);
     const [courseContent, setCourseContent] = useState([]);
     const [grades, setGrades] = useState([]);
+    const [selectedSubjects, setSelectedSubjects] = useState([]);
 
-
-    const handleSubjectChange = (index, field, value, isCoreSubject) => {
+    const handleSubjectChange = (index, field, value, isCoreSubject, selectedGrade) => {
         setFormData((prevData) => {
-            const coreSubjectsArray = prevData.coreSubjects || [];
-            const electiveSubjectsArray = prevData.electiveSubjects || [];
+            const updatedSubjects = isCoreSubject
+                ? [...prevData.coreSubjects]
+                : [...prevData.electiveSubjects];
 
-            const updatedCoreSubjects = [...coreSubjectsArray];
-            const updatedElectiveSubjects = [...electiveSubjectsArray];
+            // Remove the deselected subject from the list
+            const deselectedSubject = isCoreSubject ? updatedSubjects[index].subject : `${updatedSubjects[index].subject}-${index}`;
+            setSelectedSubjects((prevSelectedSubjects) => prevSelectedSubjects.filter(subject => subject !== deselectedSubject));
 
-            if (isCoreSubject) {
-                if (!updatedCoreSubjects[index]) {
-                    updatedCoreSubjects[index] = {
-                        subject: value === prevData.course ? "" : (courseContent[value] || [])[0],
-                        grade: "",
-                    };
-                }
+            // Update the subject with the selected value
+            updatedSubjects[index] = {
+                ...updatedSubjects[index],
+                subject: isCoreSubject ? value === prevData.course ? "" : value : value,
+                grade: selectedGrade || "",
+            };
 
-                updatedCoreSubjects[index] = {
-                    ...updatedCoreSubjects[index],
-                    [field]: value,
-                };
+            // Add the selected subject to the list
+            setSelectedSubjects((prevSelectedSubjects) => [
+                ...prevSelectedSubjects,
+                isCoreSubject ? value : `${value}-${index}`, // Use a unique identifier for elective subjects
+            ]);
 
-                // Reset core subjects when the course changes
-                if (field === 'subject' && value !== prevData.course) {
-                    updatedCoreSubjects.forEach((subject, i) => {
-                        updatedCoreSubjects[i] = {
-                            subject: (courseContent[value] || [])[0],
-                            grade: "",
-                        };
-                    });
-                }
-            } else {
-                // Handle elective subjects
-                if (!updatedElectiveSubjects[index]) {
-                    updatedElectiveSubjects[index] = {
-                        subject: "",
-                        grade: "",
-                    };
-                }
+            console.log('Selected Subjects:', selectedSubjects)
 
-                updatedElectiveSubjects[index] = {
-                    ...updatedElectiveSubjects[index],
-                    [field]: value,
-                };
-            }
-
-            return { ...prevData, coreSubjects: updatedCoreSubjects, electiveSubjects: updatedElectiveSubjects };
+            return {
+                ...prevData,
+                coreSubjects: isCoreSubject ? updatedSubjects : prevData.coreSubjects,
+                electiveSubjects: isCoreSubject ? prevData.electiveSubjects : updatedSubjects,
+            };
         });
     };
 
-
+    // Add this useEffect to log the updated state
+    useEffect(() => {
+        console.log('Updated FormData:', formData);
+    }, [formData]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -77,6 +63,7 @@ const DataForm = () => {
         fetch("http://localhost:8000/formDb")
             .then((res) => res.json())
             .then((formDb) => {
+
                 setCourses(formDb.courses);
                 setCoreSubjects(formDb.coreSubjects);
                 setCourseContent(formDb.courseContent);
@@ -133,7 +120,6 @@ const DataForm = () => {
                                 required
                             >
                                 <option value="" disabled>
-
                                 </option>
                                 {courses &&
                                     courses.map((course, index) => (
@@ -156,17 +142,13 @@ const DataForm = () => {
                                     <div className="subject" key={index}>
                                         <select
                                             value={subject.subject}
-                                            onChange={(e) =>
-                                                handleSubjectChange(index, 'subject', e.target.value, true)
-                                            }
+                                            onChange={(e) => handleSubjectChange(index, 'subject', e.target.value, true, subject.grade)}
                                             className="subInput"
                                             required
                                         >
-                                            <option value="" disabled>
-
-                                            </option>
+                                            <option value="" disabled></option>
                                             {coreSubjects.map((coreSubject, coreSubjectIndex) => (
-                                                <option key={coreSubjectIndex} value={coreSubject}>
+                                                <option key={coreSubjectIndex} value={coreSubject} disabled={selectedSubjects.includes(coreSubject)}>
                                                     {coreSubject}
                                                 </option>
                                             ))}
@@ -174,15 +156,12 @@ const DataForm = () => {
 
                                         <select
                                             value={subject.grade}
-                                            onChange={(e) =>
-                                                handleSubjectChange(index, 'grade', e.target.value, true)
-                                            }
+                                            onChange={(e) => handleSubjectChange(index, 'grade', subject.subject, true, e.target.value)}
                                             className="grade"
                                             required
+                                            disabled={!subject.subject}  // Disable if no subject is chosen
                                         >
-                                            <option value="" disabled>
-
-                                            </option>
+                                            <option value="" disabled></option>
                                             {grades.map((grade, gradeIndex) => (
                                                 <option key={gradeIndex} value={grade}>
                                                     {grade}
@@ -202,39 +181,34 @@ const DataForm = () => {
                                             <div className="subject" key={index}>
                                                 <select
                                                     value={subject.subject}
-                                                    onChange={(e) =>
-                                                        handleSubjectChange(index, 'subject', e.target.value, false)
-                                                    }
+                                                    onChange={(e) => handleSubjectChange(index, 'subject', e.target.value, false, subject.grade)}
                                                     className="subInput"
                                                     required
                                                 >
-                                                    <option value="" disabled>
-
-                                                    </option>
+                                                    <option value="" disabled></option>
                                                     {courseContent && courseContent[formData.course] ? (
                                                         courseContent[formData.course].map((content, contentIndex) => (
-                                                            <option key={contentIndex} value={content}>
+                                                            <option
+                                                                key={contentIndex}
+                                                                value={content}
+                                                                disabled={formData.electiveSubjects.some((el) => el.subject === content)}
+                                                            >
                                                                 {content}
                                                             </option>
                                                         ))
                                                     ) : (
-                                                        <option value="" disabled>
-
-                                                        </option>
+                                                        <option value="" disabled></option>
                                                     )}
                                                 </select>
 
                                                 <select
                                                     value={subject.grade}
-                                                    onChange={(e) =>
-                                                        handleSubjectChange(index, 'grade', e.target.value, false)
-                                                    }
+                                                    onChange={(e) => handleSubjectChange(index, 'grade', subject.subject, false, e.target.value)}
                                                     className="grade"
                                                     required
+                                                    disabled={!subject.subject}  // Disable if no subject is chosen
                                                 >
-                                                    <option value="" disabled>
-
-                                                    </option>
+                                                    <option value="" disabled></option>
                                                     {grades.map((grade, gradeIndex) => (
                                                         <option key={gradeIndex} value={grade}>
                                                             {grade}
@@ -247,33 +221,6 @@ const DataForm = () => {
                                 </>
                             )}
                         </div>
-
-                        {/* <div className="formInput">
-                            <label htmlFor="uniChoice">
-                                <strong>3. University</strong>
-                            </label>
-
-                            <select
-                                name="university"
-                                id="university"
-                                value={formData.university}
-                                onChange={(e) =>
-                                    setFormData({ ...formData, university: e.target.value })
-                                }
-                                className="choice"
-                                required
-                            >
-                                <option value="" disabled>
-                                    select university
-                                </option>
-                                {courses &&
-                                    courses.map((course, index) => (
-                                        <option key={index} value={course}>
-                                            {course}
-                                        </option>
-                                    ))}
-                            </select>
-                        </div> */}
 
                         <div className="toRev">
                             <button type="submit">Next</button>

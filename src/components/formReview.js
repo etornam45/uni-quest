@@ -2,65 +2,95 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const FormReview = ({ formData, onEdit }) => {
-  const [totalGrade, setTotalGrade] = useState(0);
+  const [totalCoreGrade, setTotalCoreGrade] = useState(0);
+  const [totalElectiveGrade, setTotalElectiveGrade] = useState(0);
 
   useEffect(() => {
-    // Calculate the total grade when the component renders
-    const grades = formData.subjects.map((subject) => parseInt(subject.grade, 10));
-    const sum = grades.reduce((accumulator, currentGrade) => accumulator + currentGrade, 0);
-    setTotalGrade(sum);
+    if (formData && formData.coreSubjects && Array.isArray(formData.coreSubjects)) {
+      const coreGrades = formData.coreSubjects.map((subject) => parseInt(subject.grade, 10));
+      const coreSum = coreGrades.reduce((accumulator, currentGrade) => accumulator + currentGrade, 0);
+      setTotalCoreGrade(coreSum);
+    }
+
+    if (formData && formData.electiveSubjects && Array.isArray(formData.electiveSubjects)) {
+      const electiveGrades = formData.electiveSubjects.map((subject) => parseInt(subject.grade, 10));
+      const electiveSum = electiveGrades.reduce((accumulator, currentGrade) => accumulator + currentGrade, 0);
+      setTotalElectiveGrade(electiveSum);
+    }
   }, [formData]);
 
+  const totalGrade = totalCoreGrade + totalElectiveGrade;
+
   return (
+    <div className="review">
+      <>
+        <h2>Form review</h2>
 
-      <div className="review">
-        <>
-          <h2>Form review</h2>
+        <div className="userInput">
+          <p>
+            <strong>1. Course:</strong>{" "}
+            <span style={{ padding: "1rem" }}>{formData.course}</span>
+          </p>
+        </div>
 
-
-          <div className="userInput">
-            <p>
-              <strong>1. Course:</strong> <p style={{display: "inline", padding: "1rem"}}>{formData.course}</p>
-            </p>
-          </div>
-
-          <div className="userInput">
-            <p>
-              <strong>2. Subjects and Grades:</strong>
-            </p>
-            <ol>
-              {formData.subjects.map((subject, index) => (
-                // <><h3>{index = 0 ? "Core" : "Elective"}</h3>
+        <div className="userInput">
+          <p>
+            <strong>2. Core Subjects and Grades:</strong>
+          </p>
+          <ol>
+            {formData.coreSubjects &&
+              Array.isArray(formData.coreSubjects) &&
+              formData.coreSubjects.map((subject, index) => (
                 <li key={index}>
-                  {/* <strong>Subject {index + 1}:</strong> */}
-                  {subject.subject} -
-                  {/* <strong>Grade:</strong> */}
-                  {subject.grade}
+                  {subject.subject && subject.grade && (
+                    <>
+                      {subject.subject} - {subject.grade}
+                    </>
+                  )}
                 </li>
               ))}
-            </ol>
 
-            {/* Display the total grade */}
-            <div className="userInput">
-              <p>
-                <strong>Aggregate:</strong> <p style={{display: "inline"}}>{totalGrade}</p>
-              </p>
-            </div>
-          </div>
+          </ol>
+        </div>
 
-          <div className="userInput">
-            <p>
-              <strong>3. University:</strong> <p style={{padding: "1rem"}}>-{formData.university}</p>
-            </p>
-          </div>
+        <div className="userInput">
+          <p>
+            <strong>3. Elective Subjects and Grades:</strong>
+          </p>
+          <ol>
+            {formData.electiveSubjects &&
+              formData.electiveSubjects.map((subject, index) => (
+                <li key={index}>
+                  {subject.subject && subject.grade && (
+                    <>
+                      {subject.subject} - {subject.grade}
+                    </>
+                  )}
+                </li>
+              ))}
+          </ol>
+          <br />
 
-          <div className="revBtns">
-            <button onClick={onEdit}>Edit Inputs</button>
-            <button><Link to="/programs">Proceed</Link></button>
-          </div>
+          <p>
+            <strong>Total Grade :</strong> {totalGrade}
+          </p>
+        </div>
 
-        </>
-      </div>
+        {/* <div className="userInput">
+          <p>
+            <strong>4. University:</strong>{" "}
+            <span style={{ padding: "1rem" }}>{formData.university}</span>
+          </p>
+        </div> */}
+
+        <div className="revBtns">
+          <button onClick={onEdit}>Edit Inputs</button>
+          <button>
+            <Link to="/programs">Proceed</Link>
+          </button>
+        </div>
+      </>
+    </div>
   );
 };
 
