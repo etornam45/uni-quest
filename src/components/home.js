@@ -40,72 +40,87 @@ const Home = () => {
                 <h1>For every career stage</h1>
                 <div className="stages">
 
-                    <figure class="stage">
-                        <figcaption>
+                    <div className="stage">
+                        <div className="stageCap">
                             <h4>High School Students</h4>
                             <p>Sometimes I think the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.</p>
-                            <div class="arrow"></div>
-                        </figcaption>
-                        <img src="/images/high-school.jpg" alt="sq-sample10" />
-                    </figure>
+                            <div className="arrow"></div>
+                        </div>
+                        <div className="stageImg high-sch">
+                        </div>
+                    </div>
 
-                    <figure class="stage">
-                        <figcaption>
-                            <h4>College Students & Graduates</h4>
+                    <div className="stage">
+                        <div className="stageCap">
+                            <h4>Under Graduates & College Students</h4>
                             <p>Sometimes I think the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.</p>
-                            <div class="arrow"></div>
-                        </figcaption>
-                        <img src="/images/undergraduate.jpg" />
-                    </figure>
+                            <div className="arrow"></div>
+                        </div>
+                        <div className="stageImg college">
+                        </div>
+                    </div>
 
-                    <figure class="stage">
-                        <figcaption>
+                    <div className="stage">
+                        <div className="stageCap">
                             <h4>Working Professionals</h4>
                             <p>Sometimes I think the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.</p>
-                            <div class="arrow"></div>
-                        </figcaption>
-                        <img src="/images/working-professional.jpg" alt="sq-sample10" />
-                    </figure>
+                            <div className="arrow"></div>
+                        </div>
+                        <div className="stageImg professionals">
+                        </div>
+                    </div>
 
-                    <figure class="stage">
-                        <figcaption>
+                    <div className="stage">
+                        <div className="stageCap">
                             <h4>Career Changers</h4>
                             <p>Sometimes I think the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.</p>
-                            <div class="arrow"></div>
-                        </figcaption>
-                        <img src="/images/career-changer.jpg" alt="sq-sample10" />
-                    </figure>
-
+                            <div className="arrow"></div>
+                        </div>
+                        <div className="stageImg career-changer">
+                        </div>
+                    </div>
                 </div>
             </section>
 
             {/* show case */}
-            <section className="showCase">
-                <div className="showContent">
-                    <div className="caseBox">
-                        <h2>- Personalized Recommendations.</h2>
-                        <p>At Uniquest, we understand that every student is unique. We use your grades, interests, and aspirations to provide personalized recommendations. Whether you excel in math, have a passion for the arts, or dream of studying science, we've got you covered.</p>
+            <section class="showCase">
+
+                <div class="showContent">
+                    <div class="showCase-col">
+                        <img src="/images/career-changer.jpg" />
+                        <div class="layer">
+                            <h4>Personalized Recommendations</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem reprehenderit magni repellendus dolores? Culpa sit itaque facilis nulla doloremque perferendis!</p>
+                        </div>
                     </div>
-                    <div className="caseBox">
-                        <h2>- Discover the Perfect Program.</h2>
-                        <p>Choosing the right program is crucial. Our intelligent recommendation system matches your grades and interests to a wide range of programs and courses. Explore a world of possibilities, from STEM to the arts, business to health sciences. Find your perfect fit.</p>
+                    <div class="showCase-col">
+                        <img src="/images/career-changer.jpg" />
+                        <div class="layer">
+                            <h4>Discover the Perfect Program</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem reprehenderit magni repellendus dolores? Culpa sit itaque facilis nulla doloremque perferendis!</p>
+                        </div>
                     </div>
-                    <div className="caseBox">
-                        <h2>- Explore Your Ideal Universities</h2>
-                        <p>With countless universities to choose from, the decision can be daunting. We
-                            simplify the process by matching your profile to universities that align with your academic achievements and career goals. Discover institutions that will nurture your potential.
-                        </p>
+                    <div class="showCase-col">
+                        <img src="/images/career-changer.jpg" />
+                        <div class="layer">
+                            <h4>Explore Your Ideal Universities</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem reprehenderit magni repellendus dolores? Culpa sit itaque facilis nulla doloremque perferendis!</p>
+                        </div>
                     </div>
-                    <div className="caseBox">
-                        <h2>- Guidance at Every Step.</h2>
-                        <p>We're here to assist you at every step of your journey. From understanding prerequisites to preparing for standardized tests, our comprehensive resources will ensure you're well-prepared for the road ahead.</p>
+                    <div class="showCase-col">
+                        <img src="/images/career-changer.jpg" />
+                        <div class="layer">
+                            <h4>Guidance at Every Step</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem reprehenderit magni repellendus dolores? Culpa sit itaque facilis nulla doloremque perferendis!</p>
+                        </div>
                     </div>
                 </div>
+
             </section>
 
             {/* <!-----call to action----> */}
 
-            <section class="calltoAction">
+            <section className="calltoAction">
                 <div className="cta">
                     <h1>
                         Lorem ipsum dolor sit amet consectetur

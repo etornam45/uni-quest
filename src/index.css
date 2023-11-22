@@ -5,7 +5,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  /* letter-spacing: 1px; */
+  letter-spacing: 1px;
+  font-size: 1rem;
   scroll-behavior: smooth;
 }
 
@@ -43,7 +44,7 @@ body a {
 
 /* buttons */
 body button {
-  width: 10rem;
+  width: 11rem;
   padding: 0.5rem;
   font-size: 0.9rem;
   text-align: center;
@@ -302,7 +303,7 @@ nav .menu .menuIcon {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 1)), url(/public/images/college.jpg);
+  background-image: linear-gradient(rgba(4, 9, 30, 0.1), rgba(4, 9, 30, 1)), url(/public/images/college.jpg);
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -386,17 +387,10 @@ nav .menu .menuIcon {
   gap: 3rem;
 }
 
-/* @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css); */
-
-figure.stage {
+.stage {
   position: relative;
-  max-height: 30vh;
-  min-height: 27vh;
-  height: 100%;
-  min-width: 35vw;
-  max-width: 40vw;
-  width: 100%;
-  color: #333;
+  height: 40vh;
+  width: 40vw;
   text-align: left;
   font-size: 0.8rem;
   display: flex;
@@ -405,18 +399,7 @@ figure.stage {
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
 }
 
-/* figure.stage * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-} */
-
-figure.stage img {
-  height: 100%;
-  max-width: 40%;
-  vertical-align: middle;
-}
-
-figure.stage figcaption {
+.stage .stageCap {
   position: relative;
   width: 60%;
   padding: 1rem;
@@ -424,8 +407,37 @@ figure.stage figcaption {
   border-radius: 8px 0 0 8px;
 }
 
-figure.stage .arrow {
-  top: 30px;
+.stage .stageImg {
+  width: 40%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.stage .high-sch {
+  background-image: url(/public/images/undergraduate.jpg);
+}
+
+.stage .college {
+  background-image: url(/public/images/high-school.jpg);
+}
+
+.stage .professionals {
+  background-image: url(/public/images/working-professional.jpg);
+}
+
+.stage .career-changer {
+  background-image: url(/public/images/career-changer.jpg);
+}
+
+.stage img {
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.stage .arrow {
+  top: 50px;
   left: 100%;
   width: 0;
   height: 0;
@@ -436,31 +448,71 @@ figure.stage .arrow {
   position: absolute;
 }
 
-/* show case */
+
+/*------showCase-------*/
 .showCase {
-  width: 100vw;
-  background: #fff3f3;
-  color: #000;
-  position: relative;
+  width: 100%;
+  padding: 5rem 0;
 }
 
 .showContent {
   width: 100%;
   display: flex;
-  align-items: flex-start;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 3rem;
-  padding: 8rem 1rem;
+  text-align: center;
+  gap: 0.1rem;
 }
 
-.caseBox {
-  width: 40%;
-  transition: .4s;
+.showCase-col {
+  width: 49%;
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.caseBox:hover h2 {
-  color: var(--primaryColor);
+.showCase-col img {
+  width: 100%;
+  display: block;
+}
+
+.layer {
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+.layer:hover {
+  background-image: linear-gradient(rgba(226, 0, 0, 0.1), rgba(226, 0, 0, 0.7));
+}
+
+.layer p {
+  width: 100%;
+  font-weight: 500;
+  color: #fff;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.layer:hover p {
+  bottom: 20%;
+  opacity: 1;
+}
+
+.showCase-col:hover img {
+  transform: scale(1.1);
+  transition: 0.5s;
 }
 
 /*------call to action------*/
@@ -523,7 +575,7 @@ figure.stage .arrow {
     gap: 2rem;
   }
 
-  figure.stage {
+  .stage {
     min-width: 40vw;
     max-width: 45vw;
     width: 100%;
@@ -583,13 +635,13 @@ figure.stage .arrow {
     gap: 1rem;
   }
 
-  figure.stage {
+  .stage {
     min-width: 95vw;
     max-width: 98vw;
     width: 100%;
   }
 
-  figure.stage figcaption {
+  .stage .stageCap {
     padding: 0.5rem;
   }
 
@@ -640,7 +692,7 @@ figure.stage .arrow {
 
 .formPage .note {
   width: 30%;
-  padding: 3rem;
+  padding: 2rem;
 }
 
 .formContainer {
@@ -686,7 +738,7 @@ form label {
   margin-bottom: 1rem;
 }
 
-form select option{
+form select option {
   font-size: 1rem;
 }
 
@@ -891,7 +943,7 @@ select.choice {
   color: #fff;
 }
 
-.programsMain{
+.programsMain {
   position: relative;
   width: 100%;
   display: flex;
@@ -903,7 +955,7 @@ select.choice {
   background: var(--secondaryColor);
 }
 
-.allPrograms{
+.allPrograms {
   width: 75%;
   padding-left: 3rem;
 }
@@ -1020,33 +1072,33 @@ select.choice {
   color: #fff;
 }
 
-section.main{
+section.main {
   width: 100%;
   background: #fff !important;
   padding: 5rem 13rem;
   color: #000 !important;
-  border-radius: 40px 40px 0 0 ;
+  border-radius: 40px 40px 0 0;
 }
 
-section .main h3{
+section .main h3 {
   font-weight: 600;
 }
 
-section .main p{
+section .main p {
   font-size: 1rem;
 }
 
 section .aims,
 section .overview,
 section .institutions,
-section .subjectsCombination{
+section .subjectsCombination {
   padding-bottom: 3rem;
 }
 
 section .aims h3 span,
 section .overview h3 span,
 section .institutions h3 span,
-section .subjectsCombination h3 span{
+section .subjectsCombination h3 span {
   display: inline-block;
   width: 0.4rem;
   height: 1.7rem;
@@ -1054,11 +1106,11 @@ section .subjectsCombination h3 span{
   background: crimson;
 }
 
-section .subjectsCombination{
+section .subjectsCombination {
   font-size: 1rem;
 }
 
-section .subjectsCombination .subjects{
+section .subjectsCombination .subjects {
   padding: 0.8rem;
   display: flex;
   align-items: flex-start;
@@ -1066,9 +1118,9 @@ section .subjectsCombination .subjects{
 }
 
 section .institutions ul,
-section .subjectsCombination ul{
-font-size: 1rem;
-margin: 0;
+section .subjectsCombination ul {
+  font-size: 1rem;
+  margin: 0;
 }
 
 
@@ -1175,30 +1227,30 @@ footer .cprt {
 }
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
-  
+
   .footer {
     width: 100%;
     flex-direction: column;
     padding: 2rem 1rem;
   }
-  
+
   .footer .uniquest {
     width: 100%;
     gap: 1rem;
     padding-right: 0;
   }
-  
+
   .footer .uniquest .social {
     width: 100%;
     font-size: 0.7rem;
     gap: 2rem;
   }
-  
+
   .footer .uniquest .social .socialIcon {
     color: #fff;
     font-size: 1.7rem;
   }
-  
+
   .footer .aboutContact {
     width: 100%;
     justify-content: flex-start;
